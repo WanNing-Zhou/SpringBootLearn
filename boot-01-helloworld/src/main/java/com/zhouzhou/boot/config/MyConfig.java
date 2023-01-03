@@ -1,12 +1,15 @@
 package com.zhouzhou.boot.config;
 
 import ch.qos.logback.core.db.DBHelper;
+import com.zhouzhou.boot.bean.Car;
 import com.zhouzhou.boot.bean.Pet;
 import com.zhouzhou.boot.bean.User;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.ImportResource;
 
 /**
  * @author 周万宁
@@ -26,10 +29,20 @@ import org.springframework.context.annotation.Import;
  *  4.@Import({User.class, DBHelper.class})
  *  会给容器中自动创建出这两个类型的组件,默认组件的名字就是全类名
  *  5.@conditional条件装配,当条件成立的时候才加载组件,当条件不成立的时候不会加载组件
+ *  6.@ImportResource("classpath:beans.xml")导入Spring的配置文件,让其生效
+ *  7.配置绑定
+ *    方式一: @Component
+ *           @ConfigurationProperties(prefix = "mycar")
  *
  */
+
+@ImportResource("classpath:beans.xml")
 //@ConditionalOnBean(name = "tom")
 //@Import({User.class, DBHelper.class})
+@EnableConfigurationProperties(Car.class)
+//1.开启car的配置绑定功能
+//2.把这个Car这个组件自动注册到容器中
+
 @Configuration(proxyBeanMethods = true)//告诉springboot这是一个配置类 == 配置文件
 public class MyConfig {
 
