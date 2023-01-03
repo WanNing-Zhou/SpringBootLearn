@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/SpringBootLearn.iml" filepath="$PROJECT_DIR$/SpringBootLearn.iml" />
+      <module fileurl="file://$PROJECT_DIR$/boot-01-helloword-2/boot-01-helloword-2.iml" filepath="$PROJECT_DIR$/boot-01-helloword-2/boot-01-helloword-2.iml" />
       <module fileurl="file://$PROJECT_DIR$/boot-01-helloworld/boot-01-helloworld.iml" filepath="$PROJECT_DIR$/boot-01-helloworld/boot-01-helloworld.iml" />
-      <module fileurl="file://$PROJECT_DIR$/boot-01-helloworld-2/boot-01-helloworld-2.iml" filepath="$PROJECT_DIR$/boot-01-helloworld-2/boot-01-helloworld-2.iml" />
     </modules>
   </component>
 </project>
