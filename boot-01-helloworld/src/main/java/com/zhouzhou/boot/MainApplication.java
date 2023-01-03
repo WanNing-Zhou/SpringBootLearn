@@ -43,6 +43,11 @@ public class MainApplication {
         User user1 = bean.user01();
         System.out.println(user==user1);
 
+        //5.获取组件
+        String[] beanNamesForType = run.getBeanNamesForType(User.class);
+        for(String s : beanNamesForType){
+            System.out.println(s);
+        }
     }
 
 }
