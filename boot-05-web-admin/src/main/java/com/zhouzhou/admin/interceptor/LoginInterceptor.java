@@ -28,6 +28,7 @@ public class LoginInterceptor implements HandlerInterceptor {
      * @return boolean
      **/
 
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 
@@ -38,7 +39,8 @@ public class LoginInterceptor implements HandlerInterceptor {
         }
         //拦截住未登录,跳转到登录页面
         session.setAttribute("msg","请先登录");
-        response.sendRedirect("/");
+//        response.sendRedirect("/");
+        request.getRequestDispatcher("/").forward(request,response);
         return false;
     }
 

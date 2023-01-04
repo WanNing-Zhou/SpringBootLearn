@@ -44,14 +44,7 @@ public class IndexController {
 
     @GetMapping("/main.html")
     public String mainPage(HttpSession session){
-
-        Object user = session.getAttribute("loginUser");
-        if(user!=null){
             return "main";
-        }else{
-            return "login";
-        }
-
     }
 
 }
