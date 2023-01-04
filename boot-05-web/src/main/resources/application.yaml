@@ -1,5 +1,5 @@
 spring:
-#  mvc:
+  mvc:
 #    static-path-pattern: /res/**
   web:
     resources:
@@ -7,10 +7,9 @@ spring:
       add-mappings: true
       cache:
         period: 11000
-
-  mvc:
     hiddenmethod:
       filter:
         enabled: true
-
-
+server:
+  servlet:
+    context-path: /world #所有的访问都必须以/world开始

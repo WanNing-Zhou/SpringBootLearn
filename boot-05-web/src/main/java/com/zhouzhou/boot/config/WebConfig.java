@@ -24,19 +24,19 @@ public class WebConfig {
         return hiddenHttpMethodFilter;
     }
 
-    @Bean
-    public WebMvcConfigurer webMvcConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void configurePathMatch(PathMatchConfigurer configurer) {
-
-                UrlPathHelper urlPathHelper = new UrlPathHelper();
-                //不移除; 后面的内容,矩阵变量功能就可以生效
-                urlPathHelper.setRemoveSemicolonContent(false);
-                configurer.setUrlPathHelper(urlPathHelper);
-            }
-        };
-    }
+//    @Bean
+//    public WebMvcConfigurer webMvcConfigurer() {
+//        return new WebMvcConfigurer() {
+//            @Override
+//            public void configurePathMatch(PathMatchConfigurer configurer) {
+//
+//                UrlPathHelper urlPathHelper = new UrlPathHelper();
+//                //不移除; 后面的内容,矩阵变量功能就可以生效
+//                urlPathHelper.setRemoveSemicolonContent(false);
+//                configurer.setUrlPathHelper(urlPathHelper);
+//            }
+//        };
+//    }
 
 
 //    @Override
