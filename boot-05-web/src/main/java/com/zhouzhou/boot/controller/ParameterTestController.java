@@ -1,9 +1,8 @@
 package com.zhouzhou.boot.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +18,18 @@ public class ParameterTestController {
     @GetMapping("/car/{id}/owner/{username}")
     public Map<String,Object> getCar(@PathVariable("id") Integer id,
                                      @PathVariable("username") String name,
-                                     @PathVariable Map<String,String> pv){
+                                     @PathVariable Map<String,String> pv,
+                                     @RequestHeader("User-Agent") String userAgent,
+                                     @RequestHeader Map<String,String> header,
+                                     @RequestParam Map<String,String> params,
+                                     @CookieValue("_ga") String _ga,
+                                     @CookieValue("_ga") Cookie cookie,
+                                     @RequestBody  String content  //获取请求体
+
+
+
+
+    ){
         Map<String,Object> map = new HashMap<>();
         map.put("id",id);
         return map;
