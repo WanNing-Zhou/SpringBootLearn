@@ -18,3 +18,4 @@ public interface CityMapper {
     public void insert(City city);
 
 }
+
